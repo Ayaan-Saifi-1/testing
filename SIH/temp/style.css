@@ -1,0 +1,28 @@
+
+body{
+    background: #95bbec;
+    
+}
+
+svg{
+    
+    text-align: center;
+    height: 100vh;
+    width:100%
+}
+
+
+path{
+    transition: all 0.5s;
+    fill: aliceblue;
+    stroke: black;
+    z-index: -1;
+}
+
+path:hover{
+    fill: #95bbec;
+    stroke: gold;
+    stroke-width: 2px;
+    z-index: 10;
+}
+

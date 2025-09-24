@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diversity and Culture of Uttar Pradesh</title>
+    <meta
+      name="description"
+      content="Lets have a look demo of autoplay slideshow which build with purely CSS. There is no javasript require to handle its sliding functions."
+    />
+    <meta name="author" content="Codeconvey" />
+    <!--Only for demo purpose - no need to add.-->
+    <link rel="stylesheet" type="text/css" href="demo.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="style-2.css" />
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: url("Designer1.jpg") no-repeat center center fixed;
+        background-size: cover;
+        color: #333;
+      }
+      header {
+        background-color: rgba(255, 87, 34, 0.9);
+        color: white;
+        padding: 1.5rem;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      nav {
+        background-color: rgba(255, 87, 34, 0.9);
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      nav a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+      }
+      nav a:hover {
+        background-color: rgba(255, 87, 34, 0.7);
+      }
+      .container {
+        padding: 2rem;
+        max-width: 1200px;
+        margin: auto;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 8px;
+      }
+      .section {
+        margin-bottom: 2rem;
+        background-color: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .section:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+      .section h2 {
+        color: #ff5722;
+        border-bottom: 2px solid #ff5722;
+        padding-bottom: 0.5rem;
+      }
+      .section p {
+        line-height: 1.6;
+      }
+      .section img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-top: 1rem;
+      }
+      footer {
+        position: relative;
+        right: 0;
+        background-color: rgba(255, 87, 34, 0.9);
+        color: white;
+        text-align: center;
+        padding: 1rem 0;
+        width: 100vw;
+        bottom: 0;
+        box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+      }
+      /* Reset */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        min-width: 900px;
+      }
+      /* Slider */
+      #slider {
+        width: 100%;
+        height: 500px;
+        position: relative;
+        overflow: hidden;
+      }
+      @keyframes load {
+        from {
+          left: -100%;
+        }
+        to {
+          left: 0;
+        }
+      }
+      .slides {
+        width: 400%;
+        height: 100%;
+        position: relative;
+        -webkit-animation: slide 30s infinite;
+        -moz-animation: slide 30s infinite;
+        animation: slide 30s infinite;
+      }
+      .slider {
+        width: 25%;
+        height: 100%;
+        float: left;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+      }
+      .slide img {
+        width: 100%;
+        height: 100%;
+      }
+      .slide img {
+        width: 100%;
+        height: 100%;
+      }
+      .image {
+        width: 100%;
+        height: 100%;
+      }
+      .image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Legend */
+      .legend {
+        border: 500px solid transparent;
+        border-left: 800px solid rgba(52, 73, 94, 0.7);
+        border-bottom: 0;
+        position: absolute;
+        bottom: 0;
+      }
+
+      /* Contents */
+      .content {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        overflow: hidden;
+      }
+      .content-txt {
+        width: 400px;
+        height: 150px;
+        float: left;
+        position: relative;
+        top: 300px;
+        -webkit-animation: content-s 7.5s infinite;
+        -moz-animation: content-s 7.5s infinite;
+        animation: content-s 7.5s infinite;
+      }
+      .content-txt h2 {
+        font-family: Arial;
+        text-transform: uppercase;
+        font-size: 24px;
+        color: #fff;
+        text-align: left;
+        margin-left: 30px;
+        padding-bottom: 10px;
+      }
+      .content-txt p {
+        font-family: arial;
+        font-weight: normal;
+        font-size: 14px;
+        font-style: italic;
+        color: #fff;
+        text-align: left;
+        margin-left: 30px;
+      }
+
+      /* Switch */
+      .switch {
+        width: 120px;
+        height: 10px;
+        position: absolute;
+        bottom: 50px;
+        z-index: 99;
+        left: 30px;
+      }
+      .switch > ul {
+        list-style: none;
+      }
+      .switch > ul > li {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #333;
+        float: left;
+        margin-right: 5px;
+        cursor: pointer;
+      }
+      .switch ul {
+        overflow: hidden;
+      }
+      .on {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: #f39c12;
+        position: relative;
+        -webkit-animation: on 30s infinite;
+        -moz-animation: on 30s infinite;
+        animation: on 30s infinite;
+      }
+
+      /* Animation */
+      @-webkit-keyframes slide {
+        0%,
+        100% {
+          margin-left: 0%;
+        }
+        21% {
+          margin-left: 0%;
+        }
+        25% {
+          margin-left: -100%;
+        }
+        46% {
+          margin-left: -100%;
+        }
+        50% {
+          margin-left: -200%;
+        }
+        71% {
+          margin-left: -200%;
+        }
+        75% {
+          margin-left: -300%;
+        }
+        96% {
+          margin-left: -300%;
+        }
+      }
+      @-moz-keyframes slide {
+        0%,
+        100% {
+          margin-left: 0%;
+        }
+        21% {
+          margin-left: 0%;
+        }
+        25% {
+          margin-left: -100%;
+        }
+        46% {
+          margin-left: -100%;
+        }
+        50% {
+          margin-left: -200%;
+        }
+        71% {
+          margin-left: -200%;
+        }
+        75% {
+          margin-left: -300%;
+        }
+        96% {
+          margin-left: -300%;
+        }
+      }
+      @keyframes slide {
+        0%,
+        100% {
+          margin-left: 0%;
+        }
+        21% {
+          margin-left: 0%;
+        }
+        25% {
+          margin-left: -100%;
+        }
+        46% {
+          margin-left: -100%;
+        }
+        50% {
+          margin-left: -200%;
+        }
+        71% {
+          margin-left: -200%;
+        }
+        75% {
+          margin-left: -300%;
+        }
+        96% {
+          margin-left: -300%;
+        }
+      }
+
+      @-webkit-keyframes content-s {
+        0% {
+          left: -420px;
+        }
+        10% {
+          left: 0px;
+        }
+        30% {
+          left: 0px;
+        }
+        40% {
+          left: 0px;
+        }
+        50% {
+          left: 0px;
+        }
+        60% {
+          left: 0px;
+        }
+        70% {
+          left: 0;
+        }
+        80% {
+          left: -420px;
+        }
+        90% {
+          left: -420px;
+        }
+        100% {
+          left: -420px;
+        }
+      }
+      @-moz-keyframes content-s {
+        0% {
+          left: -420px;
+        }
+        10% {
+          left: 0px;
+        }
+        30% {
+          left: 0px;
+        }
+        40% {
+          left: 0px;
+        }
+        50% {
+          left: 0px;
+        }
+        60% {
+          left: 0px;
+        }
+        70% {
+          left: 0;
+        }
+        80% {
+          left: -420px;
+        }
+        90% {
+          left: -420px;
+        }
+        100% {
+          left: -420px;
+        }
+      }
+      @keyframes content-s {
+        0% {
+          left: -420px;
+        }
+        10% {
+          left: 20px;
+        }
+        15% {
+          left: 0px;
+        }
+        30% {
+          left: 0px;
+        }
+        40% {
+          left: 0px;
+        }
+        50% {
+          left: 0px;
+        }
+        60% {
+          left: 0px;
+        }
+        70% {
+          left: 0;
+        }
+        80% {
+          left: -420px;
+        }
+        90% {
+          left: -420px;
+        }
+        100% {
+          left: -420px;
+        }
+      }
+
+      @-webkit-keyframes on {
+        0%,
+        100% {
+          margin-left: 0%;
+        }
+        21% {
+          margin-left: 0%;
+        }
+        25% {
+          margin-left: 15px;
+        }
+        46% {
+          margin-left: 15px;
+        }
+        50% {
+          margin-left: 30px;
+        }
+        71% {
+          margin-left: 30px;
+        }
+        75% {
+          margin-left: 45px;
+        }
+        96% {
+          margin-left: 45px;
+        }
+      }
+
+      @-moz-keyframes on {
+        0%,
+        100% {
+          margin-left: 0%;
+        }
+        21% {
+          margin-left: 0%;
+        }
+        25% {
+          margin-left: 15px;
+        }
+        46% {
+          margin-left: 15px;
+        }
+        50% {
+          margin-left: 30px;
+        }
+        71% {
+          margin-left: 30px;
+        }
+        75% {
+          margin-left: 45px;
+        }
+        96% {
+          margin-left: 45px;
+        }
+      }
+
+      @keyframes on {
+        0%,
+        100% {
+          margin-left: 0%;
+        }
+        21% {
+          margin-left: 0%;
+        }
+        25% {
+          margin-left: 15px;
+        }
+        46% {
+          margin-left: 15px;
+        }
+        50% {
+          margin-left: 30px;
+        }
+        71% {
+          margin-left: 30px;
+        }
+        75% {
+          margin-left: 45px;
+        }
+        96% {
+          margin-left: 45px;
+        }
+      }
+
+      /* main */
+      /* Reset */
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      html {
+        width: 100%;
+        height: 100%;
+      }
+
+      /* Body */
+      body {
+        background: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <header>
+        <h1>Diversity and Culture of Uttar Pradesh</h1>
+    </header>
+    <nav>
+        <a href="#introduction">Introduction</a>
+        <a href="#festivals">Festivals</a>
+        <a href="#cuisine">Cuisine</a>
+        <a href="#landmarks">Landmarks</a>
+        <a href="#arts-crafts">Arts & Crafts</a>
+        <a href="#music-dance">Music & Dance</a>
+    </nav>
+     -->
+    <!-- <div class="ScriptTop">
+    <div class="rt-container">
+        <div class="col-rt-4" id="float-right"> -->
+
+    <section>
+      <div class="rt-container">
+        <div class="col-rt-12">
+          <!-- Slider -->
+          <div id="slider">
+            <div class="slides">
+              <div class="slider">
+                <div class="legend"></div>
+                <div class="content">
+                  <div class="content-txt">
+                    <h2>Lorem ipsum dolor</h2>
+                    <p>
+                      Nam ultrices pellentesque facilisis. In semper tellus
+                      mollis nisl pulvinar vitae vulputate lorem consequat.
+                      Fusce odio tortor, pretium sit amet auctor ut, ultrices
+                      vel nibh.
+                    </p>
+                  </div>
+                </div>
+                <div class="image"><img src="/img/1.jpg" /></div>
+              </div>
+
+              <div class="slider">
+                <div class="legend"></div>
+                <div class="content">
+                  <div class="content-txt">
+                    <h2>Lorem ipsum dolor</h2>
+                    <p>
+                      Nam ultrices pellentesque facilisis. In semper tellus
+                      mollis nisl pulvinar vitae vulputate lorem consequat.
+                      Fusce odio tortor, pretium sit amet auctor ut, ultrices
+                      vel nibh.
+                    </p>
+                  </div>
+                </div>
+                <div class="image"><img src="/img/2.jpg" /></div>
+              </div>
+              <div class="slider">
+                <div class="legend"></div>
+                <div class="content">
+                  <div class="content-txt">
+                    <h2>Lorem ipsum dolor</h2>
+                    <p>
+                      Nam ultrices pellentesque facilisis. In semper tellus
+                      mollis nisl pulvinar vitae vulputate lorem consequat.
+                      Fusce odio tortor, pretium sit amet auctor ut, ultrices
+                      vel nibh.
+                    </p>
+                  </div>
+                </div>
+                <div class="image"><img src="/img/3.jpg" /></div>
+              </div>
+              <div class="slider">
+                <div class="legend"></div>
+                <div class="content">
+                  <div class="content-txt">
+                    <h2>Lorem ipsum dolor</h2>
+                    <p>
+                      Nam ultrices pellentesque facilisis. In semper tellus
+                      mollis nisl pulvinar vitae vulputate lorem consequat.
+                      Fusce odio tortor, pretium sit amet auctor ut, ultrices
+                      vel nibh.
+                    </p>
+                  </div>
+                </div>
+                <div class="image"><img src="/img/4.jpg" /></div>
+              </div>
+            </div>
+            <div class="switch">
+              <ul>
+                <li>
+                  <div class="on"></div>
+                </li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="intoduction">
+      <div class="head"><h2>Introduction</h2></div>
+      <div id="cards-container">
+        <div class="card" id="card1">
+          <div class="overlay">
+            <div class="arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></div>
+            <h4>Rajasthan</h4>
+            <p></p>
+          </div>
+        </div>
+        <div class="card" id="card2">
+          <div class="overlay">
+            <div class="arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></div>
+            <h4>Arunachal Pradesh</h4>
+            <p></p>
+          </div>
+        </div>
+        <div class="card" id="card3">
+          <div class="overlay">
+            <div class="arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></div>
+            <h4>Kerala</h4>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>© 2024 Diversity and Culture of Uttar Pradesh. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
