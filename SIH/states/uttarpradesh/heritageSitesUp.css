@@ -1,0 +1,123 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+header {
+  background-color:#e09018;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: underline;
+  font-size: 18px;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.header-content h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.header-content p {
+  font-size: 1.2rem;
+}
+
+/* Section Styles */
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.intro-section h2,
+.history-section h2,
+
+.gallery-section h2 ,.video-section
+{
+  font-size: 2.5rem;
+  color: #e09018;
+  margin-bottom: 20px;
+}
+
+section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Styles List */
+.types-section ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.1rem;
+}
+
+.styles-section ul li {
+  margin: 10px 0;
+}
+
+/* Gallery */
+.gallery-images {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  
+}
+
+.gallery-images img {
+  width: 30%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform .5s;
+}
+.image{
+  width:350px;
+  height:350px;
+  cursor: pointer;
+  transition: transform .5s;
+  
+}
+.gallery-images img:hover {
+  transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+.image:hover {
+  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+/* Footer */
+footer {
+  background-color: #e09018;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+footer a {
+  color: #ffebcd;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}

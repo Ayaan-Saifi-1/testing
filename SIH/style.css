@@ -1,0 +1,605 @@
+@import url("https://fonts.googleapis.com/css2?family=Baskervville+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: "Ubuntu"; */
+}
+
+.head {
+  position: relative;
+  display: flex;
+  height: 140px;
+  background-color: #FFBD00;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+  font-family: "Ubuntu";
+
+}
+
+
+.menu-btn svg {
+  height: 45px;
+}
+.menu-btn button {
+  border: none;
+  background-color: transparent;
+}
+.menu-btn {
+  transform: translate(-50%, -50%);
+  top: 50%;
+  position: absolute;
+  right: 30px;
+  align-items: center;
+  justify-content: center;
+}
+.dropdown-content{
+  position: absolute;
+  right: 0;
+  min-width: 200px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.219);
+  cursor: pointer;
+}
+.dropdown-content a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  color: black;
+  padding: 6px 8px;
+  text-decoration: none;
+}
+.hide{
+  display: none;
+
+}
+
+.dropdown-content a:hover{
+  background-color: grey;
+}
+
+
+
+
+.team-name {
+  height: 60px;
+  margin-top: 25px;
+  font-size: 28px;
+  width: fit-content;
+  overflow: hidden;
+}
+.bounding {
+  width: fit-content;
+  overflow: hidden;
+}
+
+.bounding-text {
+  transform: translateY(86%);
+}
+
+.tagline {
+  margin: auto;
+  height: 36px;
+  width: fit-content;
+  overflow: hidden;
+  font-size: 20px;
+  font-weight: 350;
+}
+
+.div2 {
+  height: 120px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+}
+.div2 .content {
+  font-size: 28px;
+  font-family: "Baskervville SC";
+  text-transform: capitalize;
+  letter-spacing: 1.5px;
+}
+.content h2{
+  position: absolute;
+  text-align: center;
+  left: 12%;
+  top: 50%;
+}
+.content a {
+  text-decoration: none;
+  color: black;
+}
+.search {
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  right: 30px;
+}
+.search input {
+  font-family: "Ubuntu";
+  font-size: 20px;
+  color: #343434d6;
+  width: 250px;
+  height: 50px;
+  border: none;
+  outline: none;
+  border: 1px solid #999999ad;
+  border-radius: 12px;
+  padding: 20px 10px;
+  cursor: pointer;
+}
+
+.page-2 {
+  display: flex;
+  height: 100vh;
+  position: relative;
+}
+.map {
+  height: 900px;
+  position: relative;
+  margin-left: 12%;
+}
+.map svg {
+  margin-top: 30px;
+  height: 900px;
+  width: 640px;
+  /* position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 53%; */
+  fill: rgba(86, 86, 86, 0.342);
+  stroke: rgba(0, 0, 0, 0.427);
+}
+
+.map .icons{
+  display: flex;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.map .icons .item{
+  position: absolute;
+}
+.map .icons .item img{
+opacity: 100%;
+}
+
+.rupee{
+  top: 70%;
+  left: -16%;
+  rotate: -6deg ;
+}
+.rupee img{
+  height: 50px;
+}
+.flag{
+  top: 7%;
+  left: -16%;
+  rotate: -4deg ;
+}
+
+.flag img{
+  height: 70px;
+}
+.elephant{
+  top: 6%;
+  right: 24%;
+  rotate: 3deg ;
+}
+.elephant img{
+  height: 70px;
+}
+
+.india-gate{
+  top: 13%;
+  right: -18%;
+}
+
+.india-gate img{
+  height: 60px;
+}
+.temple{
+  top: 40%;
+  right: -18%;
+  rotate: -2deg ;
+}
+.temple img{
+  height: 60px;
+}
+.oil-lamp{
+  top: 66%;
+  right: -10%;
+  rotate: 6deg ;
+}
+.oil-lamp img{
+  height: 50px;
+}
+.gujrati{
+  top: 35%;
+  left: -21%;
+  /* rotate: -6deg ; */
+}
+.gujrati img{
+  height: 64px;
+}
+.telugu{
+  top: 6%;
+  right: 24%;
+  rotate: 3deg ;
+}
+.telugu img{
+  height: 80px;
+}
+.map svg path {
+  fill: rgba(86, 86, 86, 0.342);
+  transition: all 250ms ease-in;
+}
+
+.map .saffron:hover {
+  fill: rgb(236, 155, 6);
+  stroke-width: 1.6px;
+  stroke: black;
+}
+.map .white:hover {
+  fill: rgb(255, 255, 255);
+  stroke-width: 1.6px;
+  stroke: black;
+}
+.map .green:hover {
+  fill: rgb(0, 214, 0);
+  stroke-width: 1.6px;
+  stroke: black;
+}
+.map .blue:hover {
+  fill: rgb(3, 0, 170);
+  stroke-width: 1.6px;
+  stroke: black;
+}
+
+.featured {
+  font-family: "Ubuntu";
+  position: absolute;
+  display: flex;
+  height: 100%;
+  width: 30%;
+  /* background-color: #FFB905; */
+  right: 2%;
+  border-radius: 10px;
+  flex-direction: column;
+  padding: 1.8% 0 2% 0;
+}
+
+.featured .featured-head {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+  width: 100%;
+  /* margin-bottom: 2%; */
+}
+.upcoming {
+  /* position: absolute; */
+  display: flex;
+  /* height: 100%; */
+  width: 90%;
+  background-color: #FFB905;
+  /* right: 2%; */
+  margin: auto;
+  border-radius: 14px;
+  flex-direction: column;
+  padding: 28px 40px 40px;
+  gap: 12px;
+  margin-top: 12vh;
+}
+
+.upcoming .upcoming-head {
+  font-family: "Ubuntu";
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+  width: 100%;
+  /* margin-bottom: 2%; */
+}
+.upcoming .upcoming-head h3{
+  font-size: 48px;
+}
+.featured .featured-head h3 {
+  font-family: "Ubuntu";
+  text-align: center;
+}
+
+#cards-container {
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  position: relative;
+  z-index: 10;
+  flex-direction: column;
+}
+#cards-container1 {
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  position: relative;
+  z-index: 10;
+  /* flex-direction: column; */
+}
+.card {
+  display: flex;
+  height: 190px;
+  width: 80%;
+  /* background-color: blue; */
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  transition: all ease 0.6s;
+}
+
+#card1 {
+  background-image: url(img/IMG-20240921-WA0015.jpg);
+}
+#card2 {
+  background-image: url(img/IMG-20240921-WA0016.jpg);
+}
+#card3 {
+  background-image: url(img/IMG-20240921-WA0017.jpg);
+}
+#carda {
+  background-image: url(img/onam.jpg);
+}
+#cardb {
+  background-image: url(img/Lohri.jpg);
+}
+#cardc {
+  background-image: url(img/bihu.jpg);
+}
+#cardd {
+  background-image: url(img/Rath\ Yatra.jpg);
+}
+.overlay {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: #5c5252d5;
+  padding: 30px 20px;
+  /* padding-top: 160px; */
+  opacity: 0;
+  transition: all ease 0.6s;
+}
+.overlay h4{
+  font-size: 28px;
+}
+.overlay .arrow{
+  position: absolute;
+  display: flex;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  right: 5px;
+  top: 50%;
+  height: 60px;
+  width: 60px;
+  align-items: center;
+  justify-content: center;
+  border:solid 2px black ;
+  transition: all 0.5s ease;
+}
+/* .overlay .arrow:hover{
+  background-color: aqua;
+  height: 90px;
+  width: 90px;
+} */
+.overlay .arrow svg{
+  height: 24px;
+}
+.overlay .arrow svg path{
+  stroke-width:0.5px ;
+}
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.about {
+  margin-top: 14vh;
+  font-family: "Ubuntu";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #ffb905;
+  position: relative;
+
+}
+.about .lft,.about .rght{
+  position: absolute;
+}
+.lft,.rght{
+  height: 100%;
+}
+.lft{
+  left: 5%;
+}
+.rght{
+  right: 5%;
+  rotate: 180deg;
+  transform: scaleY(-1);
+}
+
+.about h3 {
+  margin-top: 36px;
+  font-size: 40px;
+  text-align: center;
+}
+
+.about .content {
+  margin-bottom: 40px;
+}
+.about .content p {
+  text-align: center;
+  max-width: 60%;
+  margin: auto;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+
+}
+
+body .box {
+  height: 35vw;
+  width: 30vw;
+  background-color: white;
+  margin-left: 30vw;
+  margin-top: 5vw;
+  box-shadow: 2vw 2vw 12vw 3vw #cccccc65;
+  position: fixed;
+  bottom: 7.2vh;
+  right: 7.6vw;
+  z-index: 99;
+}
+body .box #header {
+  height: 5vw;
+  background: #000;
+  padding: 0vw;
+}
+body .box #header h1 {
+  color: #fff;
+  font-size: 2vw;
+  font-family: "Finger Paint", cursive;
+  padding: 1vw;
+}
+body .box #message-section::-webkit-scrollbar {
+  width: 10px;
+}
+body .box #message-section {
+  height: 22vw;
+  padding: 0 2.5vw;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+body .box #message-section::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+body .box #message-section::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG);
+  border-radius: 6px;
+  border: 3px solid var(--scrollbarBG);
+}
+body .box #message-section #bot,
+body .box #message-section #user {
+  position: relative;
+  bottom: 0;
+  min-height: 1.5vw;
+  border: 0.15vw solid #777;
+  background-color: #fff;
+  border-radius: 0px 1.5vw 1.5vw 1.8vw;
+  padding: 1vw;
+  margin: 1.5vw 0;
+}
+body .box #message-section #user {
+  border: 1.5px solid #000;
+  border-radius: 1.5vw 0vw 1.5vw 1.8vw;
+  background-color: #000;
+  float: right;
+}
+body .box #message-section #user #user-response {
+  color: #fff;
+}
+body .box #message-section .message {
+  color: #000;
+  clear: both;
+  line-height: 1.2vw;
+  font-size: 1.2vw;
+  padding: 8px;
+  position: relative;
+  margin: 8px 0;
+  max-width: 85%;
+  word-wrap: break-word;
+  z-index: 2;
+}
+body .box #input-section {
+  z-index: 1;
+  padding: 0 2.5vw;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  overflow: hidden;
+  height: 6vw;
+  width: 100%;
+}
+body .box #input-section input {
+  color: #000;
+  min-width: 0.5vw;
+  outline: none;
+  height: 5vw;
+  width: 26vw;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid #000 0.1vw;
+}
+body .box .send {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  flex: 0 0 auto;
+  margin-left: 1.4vw;
+  margin-right: 0vw;
+  padding: 0;
+  position: relative;
+  outline: none;
+}
+body .box .send .circle {
+  position: relative;
+  width: 4.8vw;
+  height: 4.8vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .box .send .circle i {
+  /* background-color: ; */
+  font-size: 3vw;
+  margin-left: -1vw;
+  margin-top: 1vw;}
+
+.show-box{
+  opacity: 1;
+  z-index: 99;
+  pointer-events: all;
+}
+.hide-box{
+  opacity: 0;
+  z-index: -99;
+  pointer-events: none;
+}
+.add button {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  font-size: 30px;
+  color: black;
+  border: 0.2px solid black;
+  position: fixed;
+  bottom: 7vh;
+  right: 3vw;
+  z-index:99;
+  box-shadow: 0px 0px 100px 2px #00000044;
+}
